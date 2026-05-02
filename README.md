@@ -1,5 +1,8 @@
 # flatissues
 
+[![npm version](https://img.shields.io/npm/v/flatissues.svg?color=blue)](https://www.npmjs.com/package/flatissues)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 A file-based issue tracker for [Claude Code](https://claude.com/claude-code) projects — and a convention that changes how Claude collaborates with you on engineering work.
 
 ## Why use it
@@ -23,6 +26,21 @@ What you get on top of a normal tracker:
 Ask Claude to install flatissues. Then start a fresh conversation — Claude Code auto-loads the convention and plain-language commands work directly.
 
 Prefer to run it yourself? `npx flatissues init` in your project root.
+
+## Things to ask Claude
+
+After install, these work in plain English:
+
+| What you want | Just say |
+|---|---|
+| File a new issue | *"file an issue for the dropdown bug"* |
+| File a big task with sprints | *"this is going to be a big change — open an issue and split it into sprints"* |
+| Update status | *"mark the auth refactor resolved"* |
+| Look something up | *"what's still open?"* or *"show me the bug-category issues"* |
+| Add notes to an existing issue | *"add to the dropdown bug — turns out the cause is X"* |
+| Continue a multi-session task | *"start sprint 2 of the auth refactor"* |
+
+Phrase any of these however feels natural — Claude reads the rule file and works from intent, not exact wording.
 
 ## How it works
 
