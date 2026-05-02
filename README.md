@@ -8,11 +8,11 @@ Conversation context is volatile. Bugs found during a long session, decisions ma
 
 What you get on top of a normal tracker:
 
-**Claude proactively suggests filing issues** at moments most setups would drop them: when a bug surfaces mid-task, when scope creeps, after a research synthesis, before a refactor begins. It asks before creating — never autonomously files.
+**You don't manage the tracker — Claude does.** Filenames, status renames, index regeneration, archiving. You stay in plain English: *"file an issue for the dropdown bug"*, *"mark the auth refactor resolved"*, *"what's still open?"*. Claude handles the file ops correctly because the rule file teaches them.
 
 **Multi-session work has a real handoff.** Tasks too large for one Claude instance can be planned as sprints from the start. Each sprint runs in a fresh Claude session with a clean context; the previous sprint writes a one-line prompt you paste to start the next one. No "where were we?" rediscovery.
 
-**You don't manage the tracker — Claude does.** Filenames, status renames, index regeneration, archiving. You stay in plain English: *"file an issue for the dropdown bug"*, *"mark the auth refactor resolved"*, *"what's still open?"*. Claude handles the file ops correctly because the rule file teaches them.
+**Claude proactively suggests filing issues** at moments most setups would drop them: when a bug surfaces mid-task, when scope creeps, after a research synthesis, before a refactor begins. It asks before creating — never autonomously files.
 
 ![Asking Claude to list open issues in a flatissues-tracked project](docs/list-issues-example.png)
 
