@@ -1,7 +1,7 @@
 {
   "name": "flatissues",
   "version": "0.1.0",
-  "description": "Dead-simple file-based issue tracking that lives in your repo. Designed to be Claude-friendly.",
+  "description": "File-based issue tracker for Claude Code projects.",
   "bin": {
     "flatissues": "bin/flatissues.js"
   },
@@ -28,6 +28,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scottsbull/flatissues.git"
+    "url": "https://github.com/ScottBull/flatissues.git"
   }
 }
