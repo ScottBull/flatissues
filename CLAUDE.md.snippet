@@ -1,0 +1,16 @@
+## Issues
+
+File-based issue tracker in `{{dirName}}/`. See `{{dirName}}/README.md` for naming, statuses, categories, and the sprint workflow.
+
+**Suggest creating an issue when:**
+- a bug or deferred follow-up surfaces during work that won't be done this turn
+- you finish part of a larger plan and want to capture remaining scope
+- the conversation has produced a substantial multi-step plan that hasn't been executed yet — e.g. after heavy research, before a large refactor begins, or as early-project scope is starting to settle
+
+Phrase it as a question — "Want me to file an issue for X?" — and only create the file after the user agrees. If the user says "make an issue on X" outright, skip the confirmation.
+
+**Don't over-suggest.** Skip during small contained tasks, pure Q&A, or active implementation. At most one suggestion per topic per conversation; if the user demurs or already filed something, drop it.
+
+**Status changes are file renames** (`OPEN` → `RESOLVED` is a `git mv`, not an in-file edit). Re-run `node {{dirName}}/update-index.js` after any create/rename/archive.
+
+**Before creating, consider sprints.** If the work is large enough to span multiple Claude instances, read `{{dirName}}/README.md` § Sprint Workflow first — sprint-shaped work needs an execution plan from the start.

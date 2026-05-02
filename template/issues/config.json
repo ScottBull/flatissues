@@ -1,0 +1,14 @@
+{
+  "projectName": "{{projectName}}",
+  "statuses": ["OPEN", "IN-PROGRESS", "TESTING", "BLOCKED", "RESOLVED", "CLOSED"],
+  "categories": [
+    "feature",
+    "bug",
+    "performance",
+    "infra",
+    "docs",
+    "refactor",
+    "research"
+  ],
+  "indexResolvedLimit": 0
+}

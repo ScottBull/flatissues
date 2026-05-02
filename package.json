@@ -1,0 +1,33 @@
+{
+  "name": "flatissues",
+  "version": "0.1.0",
+  "description": "Dead-simple file-based issue tracking that lives in your repo. Designed to be Claude-friendly.",
+  "bin": {
+    "flatissues": "bin/flatissues.js"
+  },
+  "files": [
+    "bin/",
+    "template/",
+    "CLAUDE.md.snippet",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "issues",
+    "tracker",
+    "markdown",
+    "flat-file",
+    "claude",
+    "claude-code",
+    "ai-friendly"
+  ],
+  "author": "Scott Bull",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottsbull/flatissues.git"
+  }
+}
