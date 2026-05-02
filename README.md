@@ -1,31 +1,30 @@
 # flatissues
 
-File-based issue tracking for [Claude Code](https://claude.com/claude-code) projects. Issues are markdown files in `issues/`. Status changes are `git mv`. ~150 lines of Node, zero dependencies.
+A file-based issue tracker for [Claude Code](https://claude.com/claude-code) projects — and a convention that changes how Claude collaborates with you on engineering work.
 
-After install, Claude Code knows the convention. You ask in plain English; Claude files, renames, and indexes for you.
+## Why use it
+
+Conversation context is volatile. Bugs found during a long session, decisions made during research, follow-ups noted in passing — none of it sticks around unless something writes it down. flatissues writes it down: one file per issue in your repo, status in the filename, history in the body, all tracked by git. New Claude sessions can read `INDEX.md` and pick up where the last one left off.
+
+What you get on top of a normal tracker:
+
+**Claude proactively suggests filing issues** at moments most setups would drop them: when a bug surfaces mid-task, when scope creeps, after a research synthesis, before a refactor begins. It asks before creating — never autonomously files.
+
+**Multi-session work has a real handoff.** Tasks too large for one Claude instance can be planned as sprints from the start. Each sprint runs in a fresh Claude session with a clean context; the previous sprint writes a one-line prompt you paste to start the next one. No "where were we?" rediscovery.
+
+**You don't manage the tracker — Claude does.** Filenames, status renames, index regeneration, archiving. You stay in plain English: *"file an issue for the dropdown bug"*, *"mark the auth refactor resolved"*, *"what's still open?"*. Claude handles the file ops correctly because the rule file teaches them.
 
 ## Install
 
-In any Claude Code session, paste:
-
-> Install flatissues in this project, then read `.claude/rules/flatissues.md` so you can use it this session.
-
-Claude runs `npx flatissues init` and loads the convention. From then on:
-
-> file an issue for the dropdown bug
-
-> this is going to be a big change — open an issue and split it into sprints
-
-That's the interface.
+Ask Claude to install flatissues. Then start a fresh conversation — Claude Code auto-loads the convention and plain-language commands work directly.
 
 Prefer to run it yourself? `npx flatissues init` in your project root.
 
-## What gets installed
+## How it works
 
-- `issues/` — scaffolding, an issue template, and an `update-index.js` that regenerates `INDEX.md` from filenames.
-- `.claude/rules/flatissues.md` — auto-loaded by Claude Code on launch. Teaches the naming convention, when to suggest (not autonomously file) issues, and a multi-instance sprint workflow for tasks too large for one Claude session.
+Issues are markdown files in `issues/`, named `YYYY-MM-DD_STATUS_category_short-slug.md`. Status changes are `git mv` (the filename is the source of truth, every change is a normal commit). An auto-generated `INDEX.md` lists everything by status. The tracker is ~470 lines of Node, zero dependencies.
 
-Status lives in the filename: `2026-05-02_OPEN_bug_dropdown.md` → `…_RESOLVED_…`. Every change is a normal commit.
+The Claude-side protocol lives in `.claude/rules/flatissues.md`, which Claude Code auto-loads on launch. It teaches the naming convention, the suggest-don't-autonomously-file rule, and the sprint workflow.
 
 ## Configuration & CLI
 
