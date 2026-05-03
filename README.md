@@ -3,23 +3,22 @@
 [![npm version](https://img.shields.io/npm/v/flatissues.svg?color=blue)](https://www.npmjs.com/package/flatissues)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A file-based issue tracker for [Claude Code](https://claude.com/claude-code) projects — and a convention that changes how Claude collaborates with you on engineering work.
+A self-organizing record system for [Claude Code](https://claude.com/claude-code) projects. Bugs, decisions, research notes, follow-ups — anything you'd otherwise lose at the end of a session.
 
 ## Why use it
 
-Conversation context is volatile. Bugs found during a long session, decisions made during research, follow-ups noted in passing — none of it sticks around unless something writes it down. flatissues writes it down: one file per issue in your repo, status in the filename, history in the body, all tracked by git. New Claude sessions can read `INDEX.md` and pick up where the last one left off.
+flatissues is two things at once:
 
-What you get on top of a normal tracker:
+- **A folder of markdown files**, one per record, status in the filename, indexed automatically, tracked by git. Plain files you can read, grep, and commit like any other.
+- **A convention Claude already knows.** Install once and every Claude session in the project can read, write, rename, and reason about those files from plain English. Nothing to memorize, no commands to learn, no MCP server to run.
 
-**You don't manage the tracker — Claude does.** Filenames, status renames, index regeneration, archiving. You stay in plain English: *"file an issue for the dropdown bug"*, *"mark the auth refactor resolved"*, *"what's still open?"*. Claude handles the file ops correctly because the rule file teaches them.
+The combination is the point. On its own, a folder of markdown is just a folder. With Claude reading the convention on every launch, it becomes a record system you talk to: *"file an issue for the dropdown bug"*, *"what's still open?"*, *"mark the auth refactor resolved"*. Claude knows when to suggest filing one, too — after a bug surfaces mid-task, after a research synthesis, before a refactor. It always asks first.
 
-**Multi-session work has a real handoff.** Tasks too large for one Claude instance can be planned as sprints from the start. Each sprint runs in a fresh Claude session with a clean context; the previous sprint writes a one-line prompt you paste to start the next one. No "where were we?" rediscovery.
-
-**Claude proactively suggests filing issues** at moments most setups would drop them: when a bug surfaces mid-task, when scope creeps, after a research synthesis, before a refactor begins. It asks before creating — never autonomously files.
+For work too large for one session, issues can be split into sprints up front. Each sprint runs in a fresh Claude session and hands off via a one-line prompt. No "where were we?".
 
 ![Asking Claude to list open issues in a flatissues-tracked project](docs/list-issues-example.png)
 
-*A real Claude Code session listing the open issues for a project tracked with flatissues. Claude reads the filenames directly — no commands, no API.*
+*A real Claude Code session reading the issues folder directly. No commands, no API.*
 
 ## Install
 
